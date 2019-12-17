@@ -16,6 +16,14 @@
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]
+        },
+        {
+          "type": "node",
+          "request": "launch",
+          "name": "Launch Karma",
+          "program": "${workspaceFolder}/node_modules/rollup/dist/bin/rollup",
+          "args": ["-c"],
+          "cwd": "${workspaceFolder}"
         }
     ]
 }

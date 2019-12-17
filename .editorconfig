@@ -4,7 +4,7 @@ insert_final_newline = true
 
 # Matches multiple files with brace expansion notation
 # Set default charset
-[*.{ts,json}]
+[*.{ts,json,cjs}]
 charset = utf-8
 indent_size = 2
 indent_style = space

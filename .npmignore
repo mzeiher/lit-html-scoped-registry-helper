@@ -1,0 +1,13 @@
+/.vscode
+node_modules
+/test
+/types
+/reports
+.editorconfig
+.eslintrc.js
+.gitignore
+index.html
+karma.config.cjs
+tsconfig.json
+rollup.config.js
+yarn.lock

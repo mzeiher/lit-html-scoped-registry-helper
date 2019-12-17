@@ -1,6 +1,6 @@
-/tokenizer.js
-/tokenizer.js.map
-/test.js
-/test.js.map
+/index.js
+/index.js.map
 /reports
+/lib
 /node_modules
+.vscode
