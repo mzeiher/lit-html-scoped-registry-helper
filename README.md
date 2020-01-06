@@ -50,7 +50,7 @@ const alternativeRegistry = {
 const renderFuncImplicit = () => render(html`<CustomElement></CustomElement><button is="CustomElementBuiltin"></button>`, document.body, { templateFactory: createScopedTemplateFactory(registry)}); // you can also use createReplaceTemplateFactory
 
 // call with registry with explicit custom-element names
-const renderFuncExplicit = () => render(html`<custom-element></custom-element><button is="custom-element-builtin"></button>`, document.body, { templateFactory: createScopedTemplateFactory(registry)}); // you can also use createReplaceTemplateFactory
+const renderFuncExplicit = () => render(html`<custom-element></custom-element><button is="custom-element-builtin"></button>`, document.body, { templateFactory: createScopedTemplateFactory(alternativeRegistry)}); // you can also use createReplaceTemplateFactory
 ```
 **Important**: the created template factories are cached and bound to the identity of the scoped registry `createXXXTemplateFactory([CustomElement])` will always create a new template factory whereas `createXXXTemplateFactory(myScopedRegistry)` will reuse template factories.
 
