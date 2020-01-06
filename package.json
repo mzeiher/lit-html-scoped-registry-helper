@@ -2,6 +2,7 @@
   "name": "lit-html-scoped-registry-helper",
   "author": { "name": "Mathis Zeiher" },
   "repository": { "url": "https://github.com/mzeiher/lit-html-scoped-registry-helper"},
+  "keywords": ["lit-html", "custom elements", "scoped custom elements"],
   "type": "module",
   "version": "1.0.0",
   "main": "index.js",
