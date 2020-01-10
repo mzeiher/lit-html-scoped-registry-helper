@@ -4,7 +4,7 @@
   "repository": { "url": "https://github.com/mzeiher/lit-html-scoped-registry-helper"},
   "keywords": ["lit-html", "custom elements", "scoped custom elements"],
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
