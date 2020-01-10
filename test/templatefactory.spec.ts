@@ -161,6 +161,13 @@ function extractTemplateStringsArray(strings: TemplateStringsArray, ...placehold
       expect(node.children[0]).toBeInstanceOf(CustomElement);
     });
 
+    it(value.name + 'template creation with substituted string an preHTML helper', () => {
+      const node = document.createElement('div');
+      const template = preHTML`<${'div'}>test</${'div'}>`;
+      render(template, node, { templateFactory: value.factory() });
+      expect(node.children[0].tagName.toLowerCase()).toBe('div');
+    });
+
     if (value.factory === createScopedTokenizedTemplateFactory) { // only run for tokenized factory
       it(value.name + 'template creation with substituted extended built-in custom element', () => {
         const node = document.createElement('div');

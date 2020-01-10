@@ -90,14 +90,14 @@ export function preHTML(strings: TemplateStringsArray, ...values: unknown[]): Te
       str[str.length - 1] === '<' // open tag
       || (str[str.length - 2] === '<' && str[str.length - 1] === '/') // close tag
     ) {
-      if (!HTMLElement.isPrototypeOf(values[i]) && !typeof 'string') { /* eslint-disable-line */
+      if (!HTMLElement.isPrototypeOf(values[i]) && typeof values[i] !== 'string') { /* eslint-disable-line */
         throw new Error('Only CustomElements or strings allowed in tag substitution')
       }
       needlessValues.push({
         value: values[i],
         index: i,
       });
-      str += getCustomElementTagName(values[i] as typeof HTMLElement, '') + strings[++i];
+      str += (typeof values[i] === 'string' ? values[i] : getCustomElementTagName(values[i] as typeof HTMLElement, '')) + strings[++i];
     }
 
     newStrings.push(str);
