@@ -23,3 +23,4 @@
 
 import './tokenizer.spec.js';
 import './templatefactory.spec.js';
+import './with-dependencies.spec.js';
