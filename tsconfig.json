@@ -5,12 +5,17 @@
     "moduleResolution": "node",
     "outDir": "./",
     "sourceMap": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "typings"
+    ]
   },
   "include": [
-    "./src/*.ts",
-    "./src/**/*.ts"
+    "src/*.ts",
+    "src/**/*.ts",
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "typings"
   ],
 }

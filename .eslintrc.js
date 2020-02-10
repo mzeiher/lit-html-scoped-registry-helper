@@ -23,6 +23,7 @@ module.exports = {
     "rules": {
         "@typescript-eslint/explicit-function-return-type": 0,
         "@typescript-eslint/no-use-before-define" : 0,
-        "no-prototype-builtins": 0
+        "no-prototype-builtins": 0,
+        "@typescript-eslint/triple-slash-reference": 0
     }
 };

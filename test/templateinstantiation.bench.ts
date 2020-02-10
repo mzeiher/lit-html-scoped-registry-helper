@@ -1,3 +1,4 @@
+/// <reference path="./../typings/benchmarkjs/index.d.ts" />
 /**
  * @license
  * Copyright (c) 2020 Mathis Zeiher

@@ -26,14 +26,14 @@ import { WithDependencies, DEPENDENCY_INFO } from "./../src/lib/with-dependencie
 
 describe('with-dependencies-test', () => {
 
-  fit('basic-loading-test', async (done) => {
+  it('basic-loading-test', async (done) => {
     class MyElement extends LitElement {
       render() {
         return html`test`;
       }
     }
 
-    class RenderTest extends WithDependencies({ 'my-element': () => sleepWithElement(1000, MyElement) }, LitElement) {
+    class RenderTest extends WithDependencies({ 'my-element': () => sleepAndReturnElement(1000, MyElement) }, LitElement) {
       renderFallback() {
         return html`loading`;
       }
@@ -68,7 +68,7 @@ describe('with-dependencies-test', () => {
   }, 10000);
 });
 
-function sleepWithElement(ms: number, element: typeof HTMLElement): Promise<typeof HTMLElement> {
+function sleepAndReturnElement(ms: number, element: typeof HTMLElement): Promise<typeof HTMLElement> {
   return new Promise((resolve) => {
     window.setTimeout(() => {
       resolve(element);

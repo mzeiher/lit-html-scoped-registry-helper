@@ -21,7 +21,7 @@
  * SOFTWARE.
  */
 
-import { LitElement, TemplateResult, html } from 'lit-element/lit-element.js';
+import { LitElement, TemplateResult } from 'lit-element/lit-element.js';
 
 // symbol for accessing the dependency info object on a custom element constructor
 export const DEPENDENCY_INFO = Symbol('getter at constructor'); // exported for test case
@@ -94,7 +94,7 @@ export const WithDependencies = function (registry: ScopedRegistry, baseClass: t
      * get scoped html template tag with resolved dependencies
      */
     get scopedHtml(): (strings: TemplateStringsArray, ...values: unknown[]) => TemplateResult {
-      throw new Error('not yet implemented');
+      return null;
     }
 
     /**
