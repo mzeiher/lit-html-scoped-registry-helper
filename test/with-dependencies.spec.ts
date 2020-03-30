@@ -25,7 +25,17 @@ import { LitElement, html } from "lit-element";
 import { WithDependencies, DEPENDENCY_INFO } from "./../src/lib/with-dependencies.js";
 
 describe('with-dependencies-test', () => {
-
+  beforeAll(async (done) => {
+    if (typeof (window as any).WebComponents === 'undefined') {
+      done();
+    } else if ((window as any).WebComponents.ready) {
+      done();
+    } else {
+      window.addEventListener('WebComponentsReady', () => {
+        done()
+      });
+    }
+  });
   it('basic-loading-test', async (done) => {
     class MyElement extends LitElement {
       render() {

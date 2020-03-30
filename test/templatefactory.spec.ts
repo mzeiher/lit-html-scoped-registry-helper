@@ -79,6 +79,17 @@ function extractTemplateStringsArray(strings: TemplateStringsArray, ...placehold
   }
 ].forEach(value => {
   describe(value.name + 'templatefactory tests', () => {
+    beforeAll(async (done) => {
+      if (typeof (window as any).WebComponents === 'undefined') {
+        done();
+      } else if ((window as any).WebComponents.ready) {
+        done();
+      } else {
+        window.addEventListener('WebComponentsReady', () => {
+          done()
+        });
+      }
+    });
     it(value.name + 'templatefactory instatiation', () => {
       const dependencies = [];
       const templateFactoryInstance = value.factory(dependencies);
